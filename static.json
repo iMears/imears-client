@@ -1,0 +1,16 @@
+{
+  "root": "build/",
+  "routes": {
+    "/**": "index.html"
+  },
+  "headers": {
+    "/**": {
+      "Strict-Transport-Security": "max-age=7776000"
+    }
+  },
+  "proxies": {
+     "/api/": {
+       "origin": "http://imears-server.herokuapp.com/v1/"
+     }
+   }
+}
