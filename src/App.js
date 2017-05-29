@@ -10,22 +10,36 @@ class App extends Component {
     super(props);
 
     this.state = {
-      users: []
-    }
+      loading: false,
+      users: [],
+    };
   }
 
   componentDidMount() {
+    this.setState({ loading: true });
+
+    this.loadData();
+  }
+
+  loadData = () => {
     const options = {
       baseURL: process.env['REACT_APP_API_URL'],
       headers: {'Authorization': process.env['REACT_APP_CLIENT_ID'] },
     };
 
     axios.get('/users', options)
-      .then((res) => this.setState({ users: res.data }))
+      .then((res) => this.setState({ users: res.data, loading: false }))
       .catch((err) => console.log(err));
-  }
+  };
 
   render() {
+    const loading = (<div>Loading...</div>);
+    const users = (
+      <div className="users">
+        { this.state.users.map((user) => <div className="user" key={user.id}>email: {user.email}</div>) }
+      </div>
+    );
+
     return (
       <div className="App">
         <div className="App-header">
@@ -35,9 +49,8 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-        <div className="users">
-          { this.state.users.map((user) => <div key={user.id}>email: {user.email}</div>) }
-        </div>
+        <br /><br />
+        { this.state.loading ? loading : users }
       </div>
     );
   }
