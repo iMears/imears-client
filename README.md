@@ -37,3 +37,9 @@ You can use nvm to easily switch Node versions between different projects.
 ```
 More about testing [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests).
 
+
+### Documentation
+
+- [axios](https://github.com/mzabriskie/axios) - Promise based HTTP client for the browser and node.js
+- [create-react-app](https://github.com/facebookincubator/create-react-app) - Create React apps with no build configuration
+- [create-react-app-buildpack](https://github.com/mars/create-react-app-buildpack#requires) - Heroku Buildpack for create-react-app: static hosting for React.js web apps
