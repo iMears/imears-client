@@ -36,7 +36,7 @@ class App extends Component {
     const loading = (<div>Loading...</div>);
     const users = (
       <div className="users">
-        { this.state.users.map((user) => <div className="user" key={user.id}>email: {user.email}</div>) }
+        { this.state.users.map((user) => <div className="user" key={user.id}>name: {user.name} - email: {user.email}</div>) }
       </div>
     );
 
