@@ -7,7 +7,7 @@ See their [README](https://github.com/facebookincubator/create-react-app/blob/ma
 ### Getting started
 
 You’ll need to have Node >= 6 on your machine.
-You can use nvm to easily switch Node versions between different projects.
+You can use [NVM](https://github.com/creationix/nvm#installation) to easily switch Node versions between different projects.
 
 
 ### Installing
